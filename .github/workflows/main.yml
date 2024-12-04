@@ -17,17 +17,16 @@ jobs:
         python-version: '3.x'
     - name: Install dependencies
       run: pip install requests
-      - name: Cek isi direktori sebelum menjalankan script
-  run: ls -l
+    - name: Cek isi direktori sebelum menjalankan script
+      run: ls -l
     - name: Bersihkan folder data
-      run: rm -f data/*.json  # Hapus semua file JSON di folder data
+      run: rm -f data/*.json
     - name: Jalankan script
       run: python scraper.py
+    - name: Cek isi direktori setelah menjalankan script  # Dipindahkan ke dalam steps
+      run: ls -l
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
         name: google-trends-data
         path: data/*.json
-
-- name: Cek isi direktori setelah menjalankan script
-  run: ls -l
