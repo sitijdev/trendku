@@ -1,0 +1,14 @@
+{
+  "name": "google-trends-scraper",
+  "version": "1.0.0",
+  "description": "Script untuk mengambil data dari Google Trends",
+  "main": "scraper.js",
+  "scripts": {
+    "start": "node scraper.js"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^19.7.2"
+  }
+}
