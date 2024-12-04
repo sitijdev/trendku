@@ -53,9 +53,9 @@ COUNTRY_LIST = [
     {"country": "VIETNAM", "code": "VN", "p": "p28"}
 ]
 
-def scrape_data(country_code):
+def scrape_data(code):
     try:
-        url = f"https://trends.google.com/trends/hottrends/atom/feed?pn={country_code}"
+        url = f"https://trends.google.com/trends/hottrends/atom/feed?pn={code}"
         headers = {
             "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36"
         }
@@ -97,7 +97,7 @@ def main():
             print(f"Error scraping data for {country['country']}: {trends_data['error']}")
             continue
 
-        json_filename = f"{country['country'].replace(' ', '_')}.json"
+        json_filename = f"data/{country['country'].replace(' ', '_')}.json"  # Pastikan file disimpan di folder data
         with open(json_filename, 'w') as json_file:
             json.dump(trends_data, json_file, indent=4)
 
