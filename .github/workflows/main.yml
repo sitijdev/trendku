@@ -11,13 +11,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js
-      uses: actions/setup-node@v3
+    - name: Setup Python
+      uses: actions/setup-python@v4
       with:
-        node-version: '20'
-    - run: npm install 1 
+        python-version: '3.x'
+    - name: Install dependencies
+      run: pip install playwright
     - name: Jalankan script
       run: |
         for url in $(cat urls.txt); do
-          node scraper.js "$url"
+          python scraper.py "$url"
         done
