@@ -17,6 +17,8 @@ jobs:
         python-version: '3.x'
     - name: Install dependencies
       run: pip install requests
+      - name: Cek isi direktori sebelum menjalankan script
+  run: ls -l
     - name: Bersihkan folder data
       run: rm -f data/*.json  # Hapus semua file JSON di folder data
     - name: Jalankan script
@@ -26,3 +28,6 @@ jobs:
       with:
         name: google-trends-data
         path: data/*.json
+
+- name: Cek isi direktori setelah menjalankan script
+  run: ls -l
