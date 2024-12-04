@@ -22,7 +22,7 @@ jobs:
     - name: Jalankan script
       run: python scraper.py
     - name: Upload artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: google-trends-data
         path: data/*.json
