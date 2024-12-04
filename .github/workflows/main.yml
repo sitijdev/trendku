@@ -17,11 +17,12 @@ jobs:
         python-version: '3.x'
     - name: Install dependencies
       run: pip install requests
+    - name: Bersihkan folder data
+      run: rm -f data/*.json  # Hapus semua file JSON di folder data
     - name: Jalankan script
       run: python scraper.py
-      - name: Upload artifacts
-  uses: actions/upload-artifact@v3
-  with:
-    name: google-trends-data
-    path: ./*.json
-        done
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: google-trends-data
+        path: data/*.json
