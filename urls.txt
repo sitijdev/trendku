@@ -1,0 +1,3 @@
+https://trends.google.com/trending?geo=ID
+https://trends.google.com/trending?geo=US
+https://trends.google.com/trending?geo=IN
