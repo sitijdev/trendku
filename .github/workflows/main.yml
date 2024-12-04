@@ -18,7 +18,5 @@ jobs:
     - name: Install dependencies
       run: pip install requests
     - name: Jalankan script
-      run: |
-        for country in $(cat country_codes.txt); do
-          python scraper.py "$country"
+      run: python scraper.py
         done
